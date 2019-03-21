@@ -1,0 +1,28 @@
+***Welcome***
+***Hardware connections***
+Relay pin is connect to the D7 pin of arduino uno.
+Now sensor d0 pin should be connect to the D8 pin of arduino.
+***Note***:if external power is given to the relay make sure the 
+ground of sensor,relay,arduino uno should be common.
+*Working*:- when it detects low moisture the relay should be turn off.
+****************code starts here****************************************
+int motor=7;//relay pin as output.
+int sensor =8; //moisture sensor pin as input.
+int value;
+void setup() {
+ pinMode(7,OUTPUT);  
+pinMode(8,INPUT); 
+void loop() 
+{ 
+  value = digitalRead(8);  
+  if(value == LOW) 
+  {
+   digitalWrite(7,HIGH); 
+  }
+  else
+  {
+   digitalWrite(7,LOW); 
+  }
+  delay(500); 
+}
+*****************Thank you**************************************************
